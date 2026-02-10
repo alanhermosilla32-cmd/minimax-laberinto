@@ -15,19 +15,29 @@ ENEMIGO = GATO
 META = QUESO
 
 # Mapa del laberinto (1 = Muro, 0 = Camino)
-# Un laberinto simple de 10x10 para empezar
+# Laberinto ampliado 21x21
 MAPA_DISEÑO = [
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1],
-    [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+    [1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+    [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1],
+    [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
 
 class JuegoLaberinto:
@@ -35,9 +45,12 @@ class JuegoLaberinto:
         self.mapa = [fila[:] for fila in MAPA_DISEÑO]  # Copia del mapa
         self.filas = len(self.mapa)
         self.columnas = len(self.mapa[0])
-        self.jugador_pos = [1, 1]
-        self.enemigo_pos = [9, 13]
-        self.meta_pos = [5, 7]
+        
+        # Posiciones Fijas
+        self.jugador_pos = [1, 1] # Esquina superior izquierda
+        self.enemigo_pos = [19, 19] # Esquina inferior derecha
+        self.meta_pos = [10, 10] # Centro del mapa (más o menos)
+        
         self.juego_terminado = False
         self.mensaje_final = ""
 
@@ -163,28 +176,47 @@ class JuegoLaberinto:
         return None # No se encontró camino
 
     def iniciar(self):
-        print("Iniciando modo automático inteligente (BFS)...")
-        time.sleep(1)
-        while not self.juego_terminado:
-            self.dibujar_mapa()
-            
-            # Movimiento automático
-            time.sleep(0.2) # Un poco más rápido
-            
-            self.mover_raton_automatico()
-            if not self.juego_terminado:
-                 pass
+        try:
+            print("Iniciando modo automático inteligente (BFS) - Gato y Ratón...")
+            time.sleep(1)
+            while not self.juego_terminado:
+                self.dibujar_mapa()
+                
+                # Movimiento automático
+                time.sleep(0.2) 
+                
+                self.mover_raton_automatico()
+                if self.juego_terminado: break
 
-            # Salida de emergencia
-            if msvcrt.kbhit():
-                tecla = msvcrt.getch().decode('utf-8').lower()
-                if tecla == 'q':
-                    print("\nSaliendo del juego...")
-                    break
+                # El enemigo se mueve después del ratón (ya llamado dentro de mover_jugador, 
+                # pero si queremos estar seguros de que no se mueva DOBLE, revisamos mover_jugador)
+                # En este código, mover_jugador LLAMA a mover_enemigo. 
+                # Así que NO debemos llamarlo aquí de nuevo, o el gato se moverá 2 veces por turno.
+                # mover_jugador -> verificar_victoria -> mover_enemigo -> verificar_derrota
+                
+                # La lógica actual es:
+                # 1. Turno Ratón (mover_raton_automatico -> mover_jugador)
+                # 2. Dentro de mover_jugador -> se mueve el enemigo.
+                
+                # Así que aquí solo necesitamos esperar y verificar.
+                
+                # Salida de emergencia
+                if msvcrt.kbhit():
+                    tecla = msvcrt.getch().decode('utf-8').lower()
+                    if tecla == 'q':
+                        print("\nSaliendo del juego...")
+                        break
+            
+            self.dibujar_mapa()
+            print(self.mensaje_final)
         
-        self.dibujar_mapa()
-        print(self.mensaje_final)
-        input("\nPresiona Enter para salir...")
+        except Exception as e:
+            print(f"\n\n[ERROR] Ocurrió un error inesperado:\n{e}")
+            import traceback
+            traceback.print_exc()
+
+        finally:
+            input("\nPresiona Enter para salir...")
 
 if __name__ == "__main__":
     juego = JuegoLaberinto()
